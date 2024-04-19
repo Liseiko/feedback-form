@@ -1,0 +1,81 @@
+<form class="form">
+
+  <div class="ribbon-left">Напишите нам</div>
+
+    <div class="form-element">
+      <label for="name">Ваше имя: </label>
+      <input
+        (input) = "inputCheckName()"
+        id="inputName"
+        class="input input-name"
+        name="name"
+        type="text">
+    </div>
+
+    <p *ngIf="errorNameMessage.length != 0 " class="error-message">{{errorNameMessage}}</p>
+
+    <div class="form-element">
+      <label for="email">Ваш Email: </label>
+      <input
+        (blur) = "inputCheckEmail()"
+        (input) = "inputCheckEmail()"
+        id="inputEmail"
+        class="input input-email"
+        name="email"
+        type="text">
+    </div>
+
+    <p *ngIf="(errorEmailMessage.length != 0)" class="error-message">{{errorEmailMessage}}</p>
+
+    <div class="form-element">
+      <label for="phone">Ваш телефон: </label>
+      <input
+        [imask] = "{mask: '+7 (000) 000-00-00'}"
+        [unmask] = "true"
+        (blur) = "inputCheckPhone()"
+        (input) = "inputCheckPhone()"
+        id="inputPhone"
+        class="input input-phone"
+        name="phone"
+        type="text">
+    </div>
+
+    <p *ngIf="errorPhoneMessage.length != 0" class="error-message">{{errorPhoneMessage}}</p>
+
+    <div class="form-element">
+      <label for="theme">Тема: </label>
+      <select class="input" name="theme">
+        <ng-container *ngIf="response">
+          <option
+            value="{{indexTheme}}"
+            *ngFor="let theme of response.themes; let indexTheme = index">
+            {{theme.nameTheme}}
+          </option>
+        </ng-container>>
+      </select>
+    </div>
+
+    <div class="form-element">
+      <label for="text-message">Ваше сообщение: </label>
+      <textarea
+        (blur) = "inputCheckText()"
+        (input) = "inputCheckText()"
+        id = "inputText"
+        class="input text-message"
+        name="text-message"
+        type="text"></textarea>
+    </div>
+
+    <p *ngIf="errorTextMessage.length != 0 " class="error-message"> {{errorTextMessage}} /p>
+
+    <div class="form-element number-wrapper">
+      <label for="captcha">Цифры: </label>
+      <input
+        class="input input-captcha"
+        name="captcha"
+        type="text">
+      <img class="img-captcha" src="../../assets/images/captcha.png" alt="">
+    </div>
+    
+    <button  (click)="inputCheckText();inputCheckName();inputCheckEmail();inputCheckPhone();" type="submit" class="btn-submit">Отправить письмо!</button>
+</form>

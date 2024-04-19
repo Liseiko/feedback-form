@@ -1,0 +1,135 @@
+.form {
+  width: 428px;
+  height: 470px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px gray;
+  background-color:#fff;
+  font-size: 13px;
+  font-family: Verdana;
+  color: #656269;
+  padding-right: 10px;
+}
+
+.form-element{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.form-element label{
+  font-weight: 600;
+}
+
+.ribbon-left {
+  position: relative;
+  width: 320px;
+  top: 10px;
+  left: -15px;
+  color: #fff;
+  background: #a83f2a;
+  padding: 0 20px 10px;
+  margin-bottom: 25px;
+  height: 30px;
+  line-height: 26px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ribbon-left:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border-left: 15px solid transparent;
+  border-top: 10px solid #6b2219;
+}
+.ribbon-left:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border-bottom: 40px solid #fff;
+  border-left: 20px solid transparent;
+}
+
+.input {
+  width: 286px;
+  height: 34px;
+
+  border-radius: 5px;
+  border: 1px solid #d2d2d2;
+}
+
+.label {
+  width: 20px;
+}
+
+.input-name {
+  width: 280px;
+  background-image: url("../../assets/images/user-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 7%;
+  text-indent: 40px;
+}
+
+.input-email {
+  width: 280px;
+  background-image: url("../../assets/images/mail-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 7%;
+  text-indent: 40px;
+}
+
+.input-phone {
+  width: 280px;
+  background-image: url("../../assets/images/phone-icon.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 7%;
+  text-indent: 40px;
+}
+
+.text-message {
+  max-width: 286px;
+  height:  70px;
+}
+
+.input-captcha {
+  position:relative;
+  width: 110px;
+  left: -4px;
+  height: 30px;
+}
+
+.btn-submit {
+  display: block;
+  margin: 10px 0 0 140px;
+  width: 160px;
+  height: 25px;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(221,221,221,1) 48%, rgba(246,246,246,1) 51%);
+  color: #797979;
+  cursor: pointer;
+}
+
+.img-captcha{
+  position: relative;
+  left: -50px;
+}
+
+.error-message {
+  margin: 1px 0 0 160px;
+  font-size: 10px;
+  color: red;
+}
