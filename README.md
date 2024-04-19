@@ -1,27 +1,26 @@
-# TestFeedbackApp
+# Форма обратной связи по тестовому заданию
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+## Сверстать форму
 
-## Development server
+Макет формы: https://imgur.com/a/pGQ2ONG
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Написать валидаторы для полей формы
+- В поле Email проверка на корректность email
+- В поле Телефон маска ввода мобильного телефона и возможность ввода только цифр
+- Все поля обязательны к заполнению
 
-## Code scaffolding
+## Значения справочника тем
+Получать теы с помощью http запроса из json файла
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Создать в базе данных таблицы для хранения сообщений
+- Таблица "справочник тем сообщений"
+- Таблица сообщений
+- Таблица контактов
+Записи таблиц должны быть соответственно связаны
 
-## Build
+## Разработать обработчик формы на .netCore
+Он должен сохранять данные в созданные в предыдущем пункте таблицы. Если совокупный набор данных Email+Телефон совпадают, то новый контакт в таблицу добавлять не нужно. Все данныые обрабатываются и сохраняются в UTF-8.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Реализовать капчу
+Проверка капчи должна проходить до отправки формы с помощью AJAX запроса.
+После отправки формы, форму на странице скрыть и вместо нее вывести все поля сохраненного сообщения из базы данных.
